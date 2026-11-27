@@ -8,83 +8,59 @@
   </a>
 </p>
 
-<h3 align="center">See how AI answers describe your brand.</h3>
-<p align="center">Measure visibility. Inspect citations. Turn evidence into improvements.</p>
+<h3 align="center">The AI creative platform.</h3>
+<p align="center">Generate images, video and audio from the web app, the API, the CLI or your agent.</p>
 
 <p align="center">
-  <a href="https://www.orchestor.io">Explore Orchestor</a> ·
-  <a href="https://docs.orchestor.io">Documentation</a> ·
-  <a href="#start-with-your-agent">Get started</a> ·
+  <a href="https://www.orchestor.io">Website</a> ·
+  <a href="https://www.orchestor.io/docs/en">Docs</a> ·
+  <a href="https://www.orchestor.io/docs/en/mcp">MCP</a> ·
+  <a href="https://www.orchestor.io/docs/en/cli">CLI</a> ·
+  <a href="https://www.orchestor.io/changelog">Changelog</a> ·
   <a href="https://github.com/orchestor-inc/.github/blob/main/profile/README.ja.md">日本語</a>
 </p>
 
 ---
 
-## Why Orchestor?
+Orchestor puts current image, video and speech models behind one account and one job API.
 
-When customers ask AI about your category, which brands appear—and which sources shape the answer? Marketing teams need more than a visibility score. They need to inspect the answers, understand the evidence, compare competitors, and decide what to do next.
+- **Images.** Generate from text and edit with reference images.
+- **Video.** Text and image to video, plus editing, upscaling, reframing, background removal, lip sync, dubbing and captions.
+- **Audio.** Text to speech and voice changing.
+- **Canvas.** Connect nodes to build a repeatable creative workflow.
+- **Marketing Studio.** Make ad images and video from templates or product assets.
+- **API, CLI and MCP.** Run the same generation jobs from code, a terminal or an agent.
 
-[Orchestor](https://www.orchestor.io) connects that work in one workspace:
+## Quick start
 
-**Monitor → Investigate → Prioritize → Act**
+Connect your agent to the hosted MCP server. Claude Code:
 
-Start with the questions your customers ask. Compare brand visibility, inspect saved answers and citations, then use the findings to plan content improvements and track follow-up work. Use the web app directly, or bring the same workflows into your agent through the CLI, skills, and MCP.
+```sh
+claude mcp add --transport http orchestor https://mcp.orchestor.io/mcp
+```
 
-## What Orchestor does
+Open `/mcp`, sign in to Orchestor and pick a workspace. Then ask:
 
-| Capability | Job |
+> List the available image models, then generate a red cube on a white background and give me the URL when the job finishes.
+
+Codex, Cursor, OpenCode and other clients: [MCP setup](https://www.orchestor.io/docs/en/mcp).
+
+Prefer the terminal? Install the CLI:
+
+```sh
+curl -fsSL https://orchestor.io/install | sh
+orc auth login
+orc creative image generate --model gpt-image-2 --prompt "A red cube on a white background" --wait
+```
+
+## Repositories
+
+| Repository | What it is |
 | :--- | :--- |
-| **Brand visibility** | Monitor how your brand appears in AI answers and compare it with competitors. |
-| **Prompt monitoring** | Track questions that matter to your customers and review changes over time. |
-| **Answers & citations** | Inspect saved responses, cited pages, and the sources behind the results. |
-| **Brand perception** | Explore how AI describes your brand and the evidence behind that assessment. |
-| **Research & reports** | Investigate competitors and content gaps, then summarize findings with supporting sources. |
-| **Improvement workflows** | Turn findings into proposals and tracked tasks within the relevant workspace. |
+| [**cli**](https://github.com/orchestor-inc/cli) | `orc`, the Orchestor CLI. Releases, install script and issue tracker. |
+| [**skills**](https://github.com/orchestor-inc/skills) | Agent skills for Orchestor, installable with `npx skills`. |
+| [**orchestor-plugin**](https://github.com/orchestor-inc/orchestor-plugin) | Skills and the MCP connection packaged as one plugin for Claude Code and other coding agents. |
 
-Keep the evidence close to the decision: brands, prompts, answers, sources, and reports provide the context for your next action.
+## Community
 
-## Choose your interface
-
-| Project | What it gives you | Start here |
-| :--- | :--- | :--- |
-| **[CLI](https://github.com/orchestor-inc/cli)** | Terminal access to Orchestor. Official binaries, release notes, and issue tracker. | [Install](https://github.com/orchestor-inc/cli#install) · [Releases](https://github.com/orchestor-inc/cli/releases) |
-| **[Skills](https://github.com/orchestor-inc/skills)** | Reusable agent instructions for AI visibility, research, monitoring, and evidence-based improvements. English by default, with Japanese translations. | [Browse skills](https://github.com/orchestor-inc/skills#resource-skills) |
-| **[Plugin](https://github.com/orchestor-inc/orchestor-plugin)** | Skills, specialist agents, commands, a session hook, and an MCP connection in one package. | [Installation & supported clients](https://github.com/orchestor-inc/orchestor-plugin#installation) |
-
-## Start with your agent
-
-Add the skills to your agent and select the ones you need:
-
-```sh
-npx skills@latest add orchestor-inc/skills
-```
-
-Or install the plugin bundle:
-
-```sh
-npx plugins add orchestor-inc/orchestor-plugin
-```
-
-Choose one installation route for the same skills. Follow the [CLI setup guide](https://orchestor.io/docs/cli) to connect your workspace; CLI and MCP authentication are separate.
-
-Then ask your agent:
-
-> Compare our brand's visibility with these competitors over the past 30 days. Show the cited sources and suggest the next three actions.
-
-## Build with us
-
-Improve a skill, report a CLI issue, or share a workflow you want to build.
-
-[Skill contributions](https://github.com/orchestor-inc/skills/pulls) · [CLI issues](https://github.com/orchestor-inc/cli/issues) · [Contact](https://www.orchestor.io/contact) · [Security](https://github.com/orchestor-inc/cli/blob/main/SECURITY.md)
-
----
-
-<p align="center">
-  <strong>Understand the answer. Decide what comes next.</strong><br>
-  Explore Orchestor, or connect it to the agent you already use.
-</p>
-<p align="center">
-  <a href="https://www.orchestor.io"><strong>Explore Orchestor →</strong></a> ·
-  <a href="https://docs.orchestor.io">Read the docs</a> ·
-  <a href="https://github.com/orchestor-inc/orchestor-plugin">Get the plugin</a>
-</p>
+[Report a CLI bug](https://github.com/orchestor-inc/cli/issues) · [Contribute a skill](https://github.com/orchestor-inc/skills/pulls) · [Contact](https://www.orchestor.io/contact) · [Security](https://github.com/orchestor-inc/cli/blob/main/SECURITY.md)
